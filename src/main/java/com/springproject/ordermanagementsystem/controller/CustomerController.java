@@ -52,4 +52,16 @@ public class CustomerController {
         }
     }
 
+    @GetMapping("/customers/delete/{id}")
+    public String deleteCustomer(@PathVariable("id") Long id, RedirectAttributes attributes){
+        try {
+            customerService.deleteCustomer(id);
+            attributes.addFlashAttribute("message", "The user has been deleted!");
+
+        } catch (CustomerNotFoundException e) {
+            attributes.addFlashAttribute("message", e.getMessage());
+        }
+        return "redirect:/customers";
+    }
+
 }
