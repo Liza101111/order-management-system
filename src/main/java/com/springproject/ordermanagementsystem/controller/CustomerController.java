@@ -1,6 +1,7 @@
 package com.springproject.ordermanagementsystem.controller;
 
 import com.springproject.ordermanagementsystem.entity.Customer;
+import com.springproject.ordermanagementsystem.exception.CustomerNotFoundException;
 import com.springproject.ordermanagementsystem.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,20 @@ public class CustomerController {
         List<Customer> customerList = customerService.listAllCustomers();
         model.addAttribute("listCustomers", customerList);
         return "customer";
+    }
+
+    @GetMapping("/customers/new")
+    public String addNewCustomer(Model model) {
+        model.addAttribute("customer", new Customer());
+        model.addAttribute("pageTitle", "Add New User");
+        return "add_customer";
+    }
+
+    @PostMapping("/customers/save")
+    public String saveCustomer(Customer customer, RedirectAttributes attributes) {
+        customerService.createCustomer(customer);
+        attributes.addFlashAttribute("message", "The new customer has been saved!");
+        return "redirect:/customers";
     }
 
 }
