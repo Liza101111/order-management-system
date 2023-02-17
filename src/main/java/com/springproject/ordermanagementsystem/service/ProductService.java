@@ -1,6 +1,4 @@
 package com.springproject.ordermanagementsystem.service;
-
-import com.springproject.ordermanagementsystem.entity.Customer;
 import com.springproject.ordermanagementsystem.entity.Product;
 import com.springproject.ordermanagementsystem.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;

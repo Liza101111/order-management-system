@@ -1,6 +1,4 @@
 package com.springproject.ordermanagementsystem.controller;
-
-import com.springproject.ordermanagementsystem.entity.Customer;
 import com.springproject.ordermanagementsystem.entity.Product;
 import com.springproject.ordermanagementsystem.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
