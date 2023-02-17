@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage orders</title>
+    <link rel="stylesheet" tyoe="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Manage Orders</h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/orders/new}">Add New Order</a>
+    </div>
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Creat Time</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="order : ${listOrders}">
+                <tr>
+                    <td>[[${order.id}]]</td>
+                    <td>[[${order.createdTime}]]</td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
