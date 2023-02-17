@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
 
 
 @Data
@@ -26,7 +27,7 @@ public class Customer {
     private String email;
 
     private String telephone;
-    /*@OneToMany(mappedBy = "customer",cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "customer",cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
     private List<Order> order;
-*/
 }

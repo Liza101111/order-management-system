@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
 
 
 @Data
@@ -24,8 +25,6 @@ public class Product {
     @Column(name = "unit_price")
     private double unitPrice;
 
-
-    /*@OneToMany(targetEntity = OrderLine.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<OrderLine> orderLine;
-*/
 }

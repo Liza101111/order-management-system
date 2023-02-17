@@ -19,9 +19,9 @@ public class OrderLine {
 
     private int quantity;
 
-    /*@ManyToOne(targetEntity = Product.class,fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Product.class,fetch = FetchType.LAZY)
     private Product product;
     @ManyToOne(targetEntity = Order.class,fetch = FetchType.LAZY)
-    private Order order;*/
+    private Order order;
 
 }
