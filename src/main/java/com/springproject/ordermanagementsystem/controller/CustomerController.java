@@ -39,4 +39,17 @@ public class CustomerController {
         return "redirect:/customers";
     }
 
+    @GetMapping("/customers/update/{id}")
+    public String updateCustomer(@PathVariable("id") Long id, Model model, RedirectAttributes attributes){
+        try {
+            Customer customer = customerService.readCustomerById(id);
+            model.addAttribute("customer", customer);
+            model.addAttribute("pageTitle", "Edit customer (ID: " + id + ")");
+            return "add_customer";
+        } catch (CustomerNotFoundException e) {
+            attributes.addFlashAttribute("message", e.getMessage());
+            return "redirect:/customers";
+        }
+    }
+
 }

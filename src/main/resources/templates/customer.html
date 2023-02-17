@@ -35,6 +35,9 @@
                     <td>[[${customer.fullName}]]</td>
                     <td>[[${customer.email}]]</td>
                     <td>[[${customer.telephone}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/customers/update/' + ${customer.id}}">Edit</a>
+                    </td>
                 </tr>
             </th:block>
             </tbody>

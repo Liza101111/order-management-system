@@ -32,7 +32,7 @@ public class CustomerService {
         log.info("Read customer with id: " + id);
         var customerById = customerRepository.findById(id);
 
-        return customerById.orElseThrow(() -> new CustomerNotFoundException("Could not find any customer with id : [{%id}]"));
+        return customerById.orElseThrow(() -> new CustomerNotFoundException("Could not find any customer with id: " + id));
     }
 
     public void deleteCustomer(Long id) throws CustomerNotFoundException {
