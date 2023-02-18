@@ -31,4 +31,36 @@ public class Order {
     @ManyToOne(targetEntity = Customer.class,fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private Customer customer;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public List<OrderLine> getOrderLine() {
+        return orderLine;
+    }
+
+    public void setOrderLine(List<OrderLine> orderLine) {
+        this.orderLine = orderLine;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }
