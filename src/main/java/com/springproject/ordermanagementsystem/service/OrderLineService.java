@@ -17,7 +17,7 @@ public class OrderLineService {
         return orderLineRepository.findAll();
     }
 
-    private void createOrderLine(OrderLine orderLine){
+    public void createOrderLine(OrderLine orderLine){
         orderLineRepository.save(orderLine);
     }
 
