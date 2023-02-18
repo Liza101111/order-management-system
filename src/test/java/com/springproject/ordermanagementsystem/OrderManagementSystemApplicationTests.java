@@ -28,7 +28,6 @@ class OrderManagementSystemApplicationTests {
 		Assertions.assertThat(savedCustomer.getId()).isGreaterThan(0);
 	}
 
-/*
 	@Test
 	public void listAllCustomerTest() {
 		Iterable<Customer> customers = customerRepository.findAll();
@@ -39,10 +38,9 @@ class OrderManagementSystemApplicationTests {
 		}
 
 	}
-*/
 	@Test
 	public void deleteCustomerTest(){
-		Long customerId = Long.valueOf(4);
+		Long customerId = Long.valueOf(5);
 		customerRepository.deleteById(customerId);
 
 		Optional<Customer> optionalCustomer = customerRepository.findById(customerId);
