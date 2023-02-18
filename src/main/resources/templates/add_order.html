@@ -20,6 +20,18 @@
                     </label>
                 </div>
             </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Customer:</label>
+                <div class="col-sm-8">
+                    <label>
+                        <select th:field="*{customer}" class="form-control">
+                            <th:block th:each="c : ${listCustomers}">
+                             <option th:text="${c.fullName}" th:value="${c.id}" />
+                            </th:block>
+                        </select>
+                    </label>
+                </div>
+            </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary m-2">Save</button>
                 <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>
