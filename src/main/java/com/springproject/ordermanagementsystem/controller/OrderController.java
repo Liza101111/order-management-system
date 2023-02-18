@@ -1,6 +1,8 @@
 package com.springproject.ordermanagementsystem.controller;
 
+import com.springproject.ordermanagementsystem.entity.Customer;
 import com.springproject.ordermanagementsystem.entity.Order;
+import com.springproject.ordermanagementsystem.service.CustomerService;
 import com.springproject.ordermanagementsystem.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ import java.util.List;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private CustomerService customerService;
 
     @GetMapping("/orders")
     public String showOrderList(Model model) {
@@ -24,7 +28,9 @@ public class OrderController {
 
     @GetMapping("/orders/new")
     public String addNewOrder(Model model) {
+        List<Customer> customerList = customerService.listAllCustomers();
         model.addAttribute("order", new Order());
+        model.addAttribute("listCustomers", customerList);
         model.addAttribute("pageTitle", "Add New Order");
         return "add_order";
     }
