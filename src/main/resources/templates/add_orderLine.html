@@ -32,6 +32,18 @@
                     </label>
                 </div>
             </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Order time:</label>
+                <div class="col-sm-8">
+                    <label>
+                        <select th:field="*{order}" class="form-control">
+                            <th:block th:each="o : ${listOrders}">
+                                <option th:text="${o.createdTime}" th:value="${o.id}" />
+                            </th:block>
+                        </select>
+                    </label>
+                </div>
+            </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary m-2">Save</button>
                 <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>

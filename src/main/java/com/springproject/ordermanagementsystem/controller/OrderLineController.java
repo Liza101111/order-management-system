@@ -1,8 +1,10 @@
 package com.springproject.ordermanagementsystem.controller;
 
+import com.springproject.ordermanagementsystem.entity.Order;
 import com.springproject.ordermanagementsystem.entity.OrderLine;
 import com.springproject.ordermanagementsystem.entity.Product;
 import com.springproject.ordermanagementsystem.service.OrderLineService;
+import com.springproject.ordermanagementsystem.service.OrderService;
 import com.springproject.ordermanagementsystem.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ public class OrderLineController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private OrderService orderService;
+
     @GetMapping("/orderLines")
     public String showOrderLineList(Model model){
         List<OrderLine> orderLineList = orderLineService.listAllOrderLine();
@@ -31,8 +36,10 @@ public class OrderLineController {
     @GetMapping("/orderLines/new")
     public String addNewOrderLine(Model model) {
         List<Product> productList = productService.listAlLProduct();
+        List<Order> orderList = orderService.listAlLOrder();
         model.addAttribute("orderLine", new OrderLine());
         model.addAttribute("listProducts", productList);
+        model.addAttribute("listOrders",orderList);
         model.addAttribute("pageTitle", "Add New OrderLine");
         return "add_orderLine";
 

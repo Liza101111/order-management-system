@@ -24,6 +24,7 @@
         <th>ID</th>
         <th>Product</th>
         <th>Quantity</th>
+        <th>Order time</th>
         <th></th>
       </tr>
       </thead>
@@ -33,6 +34,7 @@
           <td>[[${orderLine.id}]]</td>
           <td>[[${orderLine.product.name}]]</td>
           <td>[[${orderLine.quantity}]]</td>
+          <td>[[${orderLine.order.createdTime}]]</td>
         </tr>
       </th:block>
       </tbody>
