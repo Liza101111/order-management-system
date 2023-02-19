@@ -21,6 +21,7 @@ public class OrderLine {
     private int quantity;
 
     @ManyToOne(targetEntity = Product.class,fetch = FetchType.LAZY)
+    @JoinColumn(name="product_id")
     private Product product;
     @ManyToOne(targetEntity = Order.class,fetch = FetchType.LAZY)
     @JoinColumn(name="order_id")

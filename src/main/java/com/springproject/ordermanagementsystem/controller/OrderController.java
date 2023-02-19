@@ -2,7 +2,6 @@ package com.springproject.ordermanagementsystem.controller;
 
 import com.springproject.ordermanagementsystem.entity.Customer;
 import com.springproject.ordermanagementsystem.entity.Order;
-import com.springproject.ordermanagementsystem.repository.OrderRepository;
 import com.springproject.ordermanagementsystem.service.CustomerService;
 import com.springproject.ordermanagementsystem.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,6 @@ import java.util.List;
 public class OrderController {
     @Autowired
     private OrderService orderService;
-    @Autowired
-    private OrderRepository orderRepository;
     @Autowired
     private CustomerService customerService;
 
