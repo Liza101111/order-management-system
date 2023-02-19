@@ -29,12 +29,15 @@
       </tr>
       </thead>
       <tbody>
-      <th:block th:each="orderLine : ${listOrderLines}">
+      <th:block th:each="o : ${listOrderLines}">
         <tr>
-          <td>[[${orderLine.id}]]</td>
-          <td>[[${orderLine.product.name}]]</td>
-          <td>[[${orderLine.quantity}]]</td>
-          <td>[[${orderLine.order.createdTime}]]</td>
+          <td>[[${o.id}]]</td>
+          <td>[[${o.product.name}]]</td>
+          <td>[[${o.quantity}]]</td>
+          <td>[[${o.order.createdTime}]]</td>
+          <td>
+            <a class="h4 mr-3" th:href="@{'/orderLines/update/' + ${o.id}}">Edit</a>
+          </td>
         </tr>
       </th:block>
       </tbody>
