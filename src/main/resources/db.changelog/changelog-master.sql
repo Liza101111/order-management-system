@@ -2,12 +2,12 @@
 
 --changeset Liza:1
 
-CREATE TABLE customer  (
+/*CREATE TABLE customer  (
                              id BIGINT NOT NULL AUTO_INCREMENT,
                              registration_code VARCHAR(45) NOT NULL,
                              full_name VARCHAR(40) NOT NULL,
                              email varchar(45) NOT NULL,
-                             telephone VARCHAR(30)  NOT NULL,
+                             telephone VARCHAR(50)  NOT NULL,
                              PRIMARY KEY (`id`)
 )
 
@@ -26,3 +26,4 @@ insert into cstomer (id, registration_code, full_name, email, telephone) values 
 insert into cstomer (id, registration_code, full_name, email, telephone) values (13, '67544-479', 'Vernen Dermott', 'vdermottc@pcworld.com', '+84 113 510 3841');
 insert into cstomer (id, registration_code, full_name, email, telephone) values (14, '57955-8020', 'Cherise MacTeggart', 'cmacteggartd@amazon.de', '+86 839 295 1312');
 insert into cstomer (id, registration_code, full_name, email, telephone) values (15, '49348-683', 'Felipa Hymus', 'fhymuse@microsoft.com', '+84 989 754 9568');
+*/
